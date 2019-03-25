@@ -27,9 +27,26 @@ public Celebrity getRandomCelebrity()
 	currentCelebrity = celebrityList.remove(randomIndex);
 	return currentCelebrity;
 }
-public void playGame();
+public void playGame()
 {
 	
+	
+}
+public String checkGuess(String guess)
+{
+	String response = "";
+	if(response.equalsIgnoreCase(currentCelebrity.getName()))
+	{
+		response = "You're correct!!";
+		if(celebrityList.size() != 0)
+		{
+			response += getRandomCelebrity().getClue();
+		}
+	}
+	else {
+		response = "Incorrect idiot...";
+	}
+	return response;
 	
 }
 public void start()
